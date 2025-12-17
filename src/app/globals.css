@@ -682,8 +682,8 @@ ul {
   transition: transform 160ms var(--easing-out), color 160ms var(--easing-out);
 }
 
-.floatingInput:focus + .floatingLabel,
-.floatingInput:not(:placeholder-shown) + .floatingLabel {
+.floatingInput:focus+.floatingLabel,
+.floatingInput:not(:placeholder-shown)+.floatingLabel {
   transform: translateY(-9px) scale(0.92);
   color: rgba(245, 245, 220, 0.8);
 }
@@ -831,5 +831,1269 @@ textarea.floatingInput {
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
+  }
+}
+
+/* ============================================
+   APPLE-STYLE SCROLL ANIMATIONS
+   ============================================ */
+
+/* Hero Section - Sticky with parallax */
+.heroSection {
+  position: relative;
+  min-height: 150vh;
+  overflow: hidden;
+}
+
+.heroSticky {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Animated gradient background */
+.heroGradientBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Floating particles */
+.heroParticles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heroParticle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(245, 245, 220, 0.4);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(245, 245, 220, 0.3);
+}
+
+/* Animated rays */
+.heroRays {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroRay {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top,
+      transparent 0%,
+      rgba(139, 69, 19, 0.2) 50%,
+      transparent 100%);
+}
+
+.heroTitleWrap {
+  overflow: hidden;
+  perspective: 500px;
+}
+
+.heroTitleWord {
+  display: inline-block;
+  margin-right: 0.25em;
+}
+
+.heroTitleWordInner {
+  display: inline-block;
+  cursor: default;
+  transition: text-shadow 0.3s ease;
+}
+
+/* Brand badge */
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.heroBadgeIcon {
+  display: inline-block;
+  color: rgba(139, 69, 19, 0.9);
+  font-size: 16px;
+}
+
+/* Animated pills */
+.pillAnimated {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.pillDot {
+  width: 6px;
+  height: 6px;
+  background: rgba(139, 69, 19, 0.8);
+  border-radius: 50%;
+}
+
+/* CTA Button */
+.heroCta {
+  margin-top: 32px;
+}
+
+.heroCtaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 28px;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(180, 120, 60, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.heroCtaButton:hover {
+  background: linear-gradient(135deg, rgba(159, 89, 39, 1), rgba(200, 140, 80, 1));
+}
+
+.heroCtaArrow {
+  font-size: 18px;
+}
+
+/* Image shine effect */
+.heroImageShine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%);
+  pointer-events: none;
+}
+
+.heroImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(10, 10, 10, 0.4) 100%);
+  pointer-events: none;
+}
+
+/* Product badge on hero image */
+.heroProductBadge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 12px 16px;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.heroProductBadgeLabel {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(139, 69, 19, 0.9);
+}
+
+.heroProductBadgeName {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Enhanced scroll indicator */
+.scrollIndicatorMouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba(245, 245, 220, 0.4);
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scrollIndicatorWheel {
+  width: 4px;
+  height: 8px;
+  background: rgba(245, 245, 220, 0.6);
+  border-radius: 2px;
+}
+
+.scrollIndicator {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.scrollLabel {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 220, 0.6);
+}
+
+/* Floating decorative orbs */
+.floatingOrb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floatingOrb1 {
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  left: 5%;
+  background: radial-gradient(circle, rgba(139, 69, 19, 0.35), transparent 70%);
+}
+
+.floatingOrb2 {
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  right: 10%;
+  background: radial-gradient(circle, rgba(34, 139, 34, 0.28), transparent 70%);
+}
+
+.floatingOrb3 {
+  width: 350px;
+  height: 350px;
+  bottom: 20%;
+  left: 30%;
+  background: radial-gradient(circle, rgba(100, 100, 180, 0.22), transparent 70%);
+}
+
+/* ============================================
+   PRODUCT SHOWCASE SECTION
+   ============================================ */
+
+.productShowcase {
+  position: relative;
+  min-height: 500vh;
+  background: var(--color-bg);
+}
+
+.productShowcaseSticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.productShowcaseBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: background 0.3s ease;
+}
+
+.productShowcaseHeader {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.productShowcaseTitle {
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.1;
+  margin-top: 8px;
+}
+
+.productShowcaseContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.productImageContainer {
+  position: relative;
+  width: 50%;
+  max-width: 500px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImageWrapper {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.productImageInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lift);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.productImage {
+  object-fit: cover;
+}
+
+.productImageGlow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle, rgba(139, 69, 19, 0.15), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.productInfoContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.productInfo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 320px;
+  padding: 24px;
+}
+
+.productInfoLeft {
+  left: 5%;
+}
+
+.productInfoRight {
+  right: 5%;
+  text-align: right;
+}
+
+.productNumber {
+  font-size: 48px;
+  font-weight: 700;
+  opacity: 0.2;
+  display: block;
+  margin-bottom: -10px;
+}
+
+.productName {
+  font-size: clamp(24px, 3vw, 36px);
+  margin-bottom: 8px;
+}
+
+.productTagline {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+
+.productDescription {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.productProgressBar {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.productProgressFill {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(139, 69, 19, 0.8), rgba(34, 139, 34, 0.8));
+  transform-origin: left;
+}
+
+.productDots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.productDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.productDot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================
+   WHO WE SERVE - HORIZONTAL SCROLL
+   ============================================ */
+
+.whoWeServeSection {
+  position: relative;
+  min-height: 300vh;
+  background: var(--color-bg);
+}
+
+.whoWeServeSticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.whoWeServeHeader {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0 16px;
+}
+
+.whoWeServeCardsWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.whoWeServeCards {
+  display: flex;
+  gap: 30px;
+  padding: 0 10%;
+  will-change: transform;
+}
+
+.whoWeServeCards .serveCard {
+  flex: 0 0 40vw;
+  min-width: 350px;
+  max-width: 500px;
+  height: 50vh;
+  min-height: 400px;
+  transform-style: preserve-3d;
+}
+
+.serveCardGlow {
+  position: absolute;
+  inset: -50%;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: -1;
+}
+
+.serveCard:hover .serveCardGlow {
+  opacity: 1;
+}
+
+.serveCardCorner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, 0.05) 50%);
+  border-radius: 0 0 var(--radius-lg) 0;
+}
+
+.whoWeServeProgress {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.whoWeServeProgressFill {
+  height: 100%;
+  background: rgba(139, 69, 19, 0.8);
+  transform-origin: left;
+}
+
+/* ============================================
+   PHILOSOPHY SECTION ENHANCEMENTS
+   ============================================ */
+
+.philosophySection {
+  position: relative;
+  padding: clamp(100px, 12vw, 160px) 0;
+  overflow: hidden;
+}
+
+.philosophyHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.philosophyTitle {
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.15;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.philosophyTitleLine {
+  display: block;
+}
+
+.philosophyChar {
+  display: inline-block;
+}
+
+.philosophyStack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.philosophyStatement {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.philosophyIcon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.2), rgba(34, 139, 34, 0.15));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+}
+
+.philosophyContent {
+  flex: 1;
+}
+
+.philosophyStatementTitle {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.philosophyStatementText {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.philosophyIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: left;
+}
+
+.philosophyLine {
+  position: absolute;
+  left: calc(50% - 400px + 26px);
+  top: 180px;
+  width: 2px;
+  height: calc(100% - 280px);
+  background: linear-gradient(180deg, rgba(139, 69, 19, 0.3), rgba(34, 139, 34, 0.3));
+  transform-origin: top;
+  z-index: -1;
+}
+
+/* ============================================
+   FEATURED PRODUCTS GALLERY
+   ============================================ */
+
+.featuredSection {
+  position: relative;
+  padding: clamp(100px, 12vw, 160px) 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--color-bg), rgba(15, 15, 15, 1));
+}
+
+.featuredBg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.featuredParticles {
+  position: absolute;
+  inset: -50%;
+}
+
+.featuredParticle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: floatParticle 6s ease-in-out infinite;
+}
+
+@keyframes floatParticle {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.15;
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.2);
+    opacity: 0.3;
+  }
+}
+
+.featuredHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.featuredTitle {
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.1;
+  margin-top: 8px;
+}
+
+.featuredSubtitle {
+  margin-top: 16px;
+  color: var(--color-text-muted);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featuredGallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  perspective: 1500px;
+  flex-wrap: wrap;
+  padding: 40px 16px;
+}
+
+.featuredCard {
+  position: relative;
+  width: 280px;
+  height: 400px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.featuredCard:hover {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.featuredCardGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(139, 69, 19, 0.25), transparent 60%);
+  pointer-events: none;
+}
+
+.featuredCardImage {
+  position: relative;
+  width: 100%;
+  height: 65%;
+  overflow: hidden;
+}
+
+.featuredImage {
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.featuredCard:hover .featuredImage {
+  transform: scale(1.08);
+}
+
+.featuredSpotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center,
+      rgba(255, 255, 255, 0.15) 0%,
+      transparent 70%);
+  pointer-events: none;
+}
+
+.featuredCardInfo {
+  padding: 20px;
+}
+
+.featuredCardNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.2), rgba(34, 139, 34, 0.15));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+}
+
+.philosophyContent {
+  flex: 1;
+}
+
+.philosophyStatementTitle {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.philosophyStatementText {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.philosophyIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: left;
+}
+
+.philosophyLine {
+  position: absolute;
+  left: calc(50% - 400px + 26px);
+  top: 180px;
+  width: 2px;
+  height: calc(100% - 280px);
+  background: linear-gradient(180deg, rgba(139, 69, 19, 0.3), rgba(34, 139, 34, 0.3));
+  transform-origin: top;
+  z-index: -1;
+}
+
+/* ============================================
+   FEATURED PRODUCTS GALLERY
+   ============================================ */
+
+.featuredSection {
+  position: relative;
+  padding: clamp(100px, 12vw, 160px) 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--color-bg), rgba(15, 15, 15, 1));
+}
+
+.featuredBg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.featuredParticles {
+  position: absolute;
+  inset: -50%;
+}
+
+.featuredParticle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: floatParticle 6s ease-in-out infinite;
+}
+
+@keyframes floatParticle {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.15;
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.2);
+    opacity: 0.3;
+  }
+}
+
+.featuredHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.featuredTitle {
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.1;
+  margin-top: 8px;
+}
+
+.featuredSubtitle {
+  margin-top: 16px;
+  color: var(--color-text-muted);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featuredGallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  perspective: 1500px;
+  flex-wrap: wrap;
+  padding: 40px 16px;
+}
+
+.featuredCard {
+  position: relative;
+  width: 280px;
+  height: 400px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.featuredCard:hover {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.featuredCardGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(139, 69, 19, 0.25), transparent 60%);
+  pointer-events: none;
+}
+
+.featuredCardImage {
+  position: relative;
+  width: 100%;
+  height: 65%;
+  overflow: hidden;
+}
+
+.featuredImage {
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.featuredCard:hover .featuredImage {
+  transform: scale(1.08);
+}
+
+.featuredSpotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center,
+      rgba(255, 255, 255, 0.15) 0%,
+      transparent 70%);
+  pointer-events: none;
+}
+
+.featuredCardInfo {
+  padding: 20px;
+}
+
+.featuredCardNumber {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
+}
+
+.featuredCardName {
+  font-size: 20px;
+  margin: 6px 0;
+}
+
+.featuredCardTagline {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.featuredCardDescription {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 10px;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+.featuredCardCorner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(-135deg, rgba(139, 69, 19, 0.4) 50%, transparent 50%);
+}
+
+/* ============================================
+   ACCESSORIES SECTION
+   ============================================ */
+
+.accessoriesSection {
+  position: relative;
+  padding: clamp(100px, 12vw, 160px) 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(15, 15, 15, 1), var(--color-bg));
+}
+
+.accessoriesBg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.accessoriesPattern {
+  position: absolute;
+  inset: -50%;
+  background-image: radial-gradient(circle at 2px 2px, rgba(139, 69, 19, 0.1) 1px, transparent 0);
+  background-size: 40px 40px;
+  opacity: 0.5;
+}
+
+.accessoriesHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.accessoriesTitle {
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.15;
+  margin-top: 10px;
+}
+
+.accessoriesSubtitle {
+  margin-top: 16px;
+  color: var(--color-text-muted);
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.accessoriesShowcase {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  perspective: 1200px;
+  margin-bottom: 60px;
+}
+
+.accessoryCard {
+  position: relative;
+  width: 340px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.accessoryCard:hover,
+.accessoryCardActive {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.accessoryCardGlow {
+  position: absolute;
+  inset: -100%;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+}
+
+.accessoryCardImage {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.accessoryImage {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.accessoryCard:hover .accessoryImage {
+  transform: scale(1.08);
+}
+
+.accessoryCardShine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  pointer-events: none;
+}
+
+.accessoryCardContent {
+  padding: 24px;
+}
+
+.accessoryCardTag {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.accessoryCardName {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.accessoryCardTagline {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.accessoryCardDescription {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.accessoryCardButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 18px;
+  background: rgba(139, 69, 19, 0.2);
+  border: 1px solid rgba(139, 69, 19, 0.4);
+  border-radius: 999px;
+  color: var(--color-text);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.accessoryCardButton:hover {
+  background: rgba(139, 69, 19, 0.4);
+}
+
+.accessoryCardCorner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(-135deg, rgba(139, 69, 19, 0.5) 50%, transparent 50%);
+}
+
+.accessoriesFeatures {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.accessoriesFeature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 1200px) {
+  .productInfo {
+    max-width: 250px;
+    padding: 16px;
+  }
+
+  .productInfoLeft {
+    left: 2%;
+  }
+
+  .productInfoRight {
+    right: 2%;
+  }
+}
+
+@media (max-width: 900px) {
+  .productShowcaseContent {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .productImageContainer {
+    width: 80%;
+    height: 40vh;
+  }
+
+  .productInfoContainer {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .productInfo {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .whoWeServeCards .serveCard {
+    flex: 0 0 80vw;
+    min-width: 280px;
+  }
+
+  .featuredGallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .featuredCard {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .accessoriesShowcase {
+    gap: 24px;
+  }
+
+  .accessoryCard {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .philosophyLine {
+    display: none;
+  }
+
+  .floatingOrb {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroSection {
+    min-height: 120vh;
+  }
+
+  .productShowcase {
+    min-height: 400vh;
+  }
+
+  .whoWeServeSection {
+    min-height: 250vh;
+  }
+
+  .productNumber {
+    font-size: 36px;
+  }
+
+  .productName {
+    font-size: 24px;
   }
 }
